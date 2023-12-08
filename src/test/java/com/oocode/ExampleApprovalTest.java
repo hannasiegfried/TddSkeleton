@@ -1,7 +1,8 @@
 package com.oocode;
 
-import com.oneeyedmen.okeydoke.junit.*;
-import org.junit.*;
+import com.oneeyedmen.okeydoke.junit.ApprovalsRule;
+import org.junit.Rule;
+import org.junit.Test;
 
 public class ExampleApprovalTest {
     @Rule
