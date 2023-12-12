@@ -1,13 +1,13 @@
 package com.oocode;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.Is.is;
+import static org.hamcrest.Matchers.equalTo;
 
 public class ExampleTest {
     @Test
     public void canAnswerTheUniversalQuestion() {
-        assertThat(new Example().answer(), is(42));
+        assertThat(new Example().answer(), equalTo(42));
     }
 }

@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 set -e
-./gradlew clean test jacocoTestReport pitest
+./gradlew clean test jacocoTestReport
 open build/jacocoHtml/index.html
-open build/reports/pitest
