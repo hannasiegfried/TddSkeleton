@@ -26,6 +26,7 @@ dependencies {
     testImplementation 'com.oneeyedmen:okeydoke:2.0.3'
     testImplementation 'org.mockito:mockito-core:5.8.0'
 }
+
 test {
     useJUnitPlatform()
     testLogging {
@@ -34,7 +35,6 @@ test {
 }
 jacoco {
     toolVersion = "0.8.11"
-    reportsDirectory = file("$buildDir/customJacocoReportDir")
 }
 jacocoTestReport {
     reports {
