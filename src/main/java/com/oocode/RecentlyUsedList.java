@@ -12,6 +12,9 @@ public class RecentlyUsedList {
     }
 
     public void add(String number){
+        if(list.contains(number)){
+            list.remove(number);
+        }
         this.list.add(number);
     }
 
@@ -19,6 +22,6 @@ public class RecentlyUsedList {
         if (toRetrieve + 1> list.size()){
             return "";
         }
-        return this.list.get(toRetrieve);
+        return this.list.get(list.size()-toRetrieve-1);
     }
 }
