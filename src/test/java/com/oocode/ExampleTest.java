@@ -49,16 +49,52 @@ public class ExampleTest {
     @Test
     public void addItemsInOrderAndReplaceNonUnique() {
         String number = "12345";
-        String number1 = "6789";
-        String number2 = "12345";
+        String number1 = "12345";
+        String number2 = "6789";
+
         RecentlyUsedList myList = new RecentlyUsedList();
         myList.add(number);
         myList.add(number1);
         myList.add(number2);
 
-        assertThat(myList.retrieve(0), equalTo("12345"));
-        assertThat(myList.retrieve(1), equalTo("6789"));
+        assertThat(myList.retrieve(0), equalTo("6789"));
+        assertThat(myList.retrieve(1), equalTo("12345"));
         assertThat(myList.retrieve(2), equalTo(""));
+    }
+
+    @Test
+    public void limitListSize() {
+        String number = "1";
+        String number1 = "2";
+        String number2 = "3";
+        String number3 = "4";
+        String number4 = "5";
+        String number5 = "6";
+
+        RecentlyUsedList myList = new RecentlyUsedList(4);
+        myList.add(number);
+        myList.add(number1);
+        myList.add(number2);
+        myList.add(number3);
+        myList.add(number4);
+        myList.add(number5);
+
+        assertThat(myList.retrieve(0), equalTo("6"));
+        assertThat(myList.retrieve(1), equalTo("5"));
+        assertThat(myList.retrieve(2), equalTo("4"));
+        assertThat(myList.retrieve(3), equalTo("3"));
+        assertThat(myList.retrieve(4), equalTo(""));
+    }
+
+    @Test
+    public void addNumberAsInt() {
+        int number = 12345;
+
+
+        RecentlyUsedList myList = new RecentlyUsedList();
+        myList.add(number);
+
+        assertThat(myList.retrieve(0), equalTo("12345"));
     }
 
 }
